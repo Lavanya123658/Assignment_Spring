@@ -1,0 +1,30 @@
+<div class="mt-5">
+  <table class="table table-bordered">
+    <thead class="thead">
+      <tr>
+        <!-- <th>ID</th> -->
+        <th>Serial No</th>
+        <th>Employee</th>
+        <th>No.of Leaves Approved</th>
+        <th>No.of Leaves Pending</th>
+        <th>No.of Leaves Rejected</th>
+        <th>No.of Leaves Remaining</th>
+        <!-- <th>Edit</th> -->
+
+      </tr>
+    </thead>
+    <tbody class="tbody">
+        <tr *ngFor="let leave of leaveSummary">
+          <!-- <td> {{leave.id}}</td> -->
+          <td>{{leave.serial_no}}</td>
+          <td>{{leave.name}}</td>
+          <td>{{leave.leavesApproved}}</td>
+          <td>{{leave.leavesPending}}</td>
+          <td>{{leave.leavesRejected}}</td>
+          <td>{{leave.leavesRemaining}}</td>
+          <!-- <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(leave)">Edit</button></td> -->
+          <!-- <td><button type="button" class="btn btn-dark" (click)="delete(leave)">Delete</button></td> -->
+        </tr>
+    </tbody>
+  </table>
+</div>

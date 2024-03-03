@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Leave Summary</h2>
+  <div class="form-group">
+    <label for="fromDate">From Date:</label>
+    <input type="date" class="form-control" id="fromDate" [(ngModel)]="fromDate" >
+  </div>
+  <div class="form-group">
+    <label for="toDate">To Date:</label>
+    <input type="date" class="form-control" id="toDate" [(ngModel)]="toDate" >
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-dark mt-3" (click)="fetchLeaveSummary()">Get</button>
+  </div>
+
+
+  <table class="table table-bordered mt-5" *ngIf="leaveSummary && leaveSummary.length > 0">
+    <thead class="thead">
+      <tr>
+        <th>Serial No</th>
+        <th>Employee Name</th>
+        <th>Leaves Approved</th>
+        <th>Leaves Pending</th>
+        <th>Leaves Rejected</th>
+      </tr>
+    </thead>
+    <tbody class="tbody">
+      <tr *ngFor="let summary of leaveSummary; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ summary.name }}</td>
+        <td>{{ summary.leavesApproved }}</td>
+        <td>{{ summary.leavesPending }}</td>
+        <td>{{ summary.leavesRejected }}</td>
+      </tr>
+    </tbody>
